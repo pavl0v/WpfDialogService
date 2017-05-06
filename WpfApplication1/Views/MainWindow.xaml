@@ -1,0 +1,13 @@
+﻿<views:MainWindowBase x:Class="WpfApplication1.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:WpfApplication1.Views"
+        Title="MainWindow" Height="350" Width="525" 
+        DataContext="{Binding MainWindowViewModel, Source={StaticResource ResourceKey=ViewModelLocator}}"
+        DialogService="{Binding ., Source={StaticResource ResourceKey=DialogService}}">
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" 
+                Command="{Binding OpenDialogCommand}" 
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"/>
+    </Grid>
+</views:MainWindowBase>
